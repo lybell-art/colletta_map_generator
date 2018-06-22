@@ -187,10 +187,10 @@ function makeBTN()
 
 function setMouseOnFunc(p, q)
 {
-	function p(){
+	function f(){
 		mode=p, selection=parseInt(q);
 	}
-	return p;
+	return f;
 }
 function BTN(img,x,y,w,h)
 {
