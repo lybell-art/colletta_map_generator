@@ -19,12 +19,12 @@ function preload()
 		imgBox.items[i]=loadImage(urlData.items[i],function(){this.count++;}.bind(this));
 		imgBox.items[i].resize(20,20);
 	}
-	for(var i in d.urlData.objects)
+	for(var i in urlData.objects)
 	{
 		imgBox.objects[i]=loadImage(urlData.objects[i],function(){this.count++;}.bind(this));
 		imgBox.objects[i].resize(20,20);
 	}
-	for(var i in d.urlData.platform)
+	for(var i in urlData.platform)
 	{
 		imgBox.platform[i]=loadImage(urlData.platform[i],function(){this.count++;}.bind(this));
 		imgBox.platform[i].resize(20,20);
