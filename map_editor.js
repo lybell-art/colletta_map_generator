@@ -92,7 +92,6 @@ function drawTile()
 {
 	for (var md in Map)
 	{
-		console.log(md);
 		for (var i=0; i<wid; i++)
 		{
 			if(Map[md][i]===undefined) Map[md][i]=[];
