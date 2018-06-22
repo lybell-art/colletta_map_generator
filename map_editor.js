@@ -69,6 +69,7 @@ function mousePressed()
 			for(var i in mnb.button[md])	
 			{
 				mnb.button[md][i].mouseOn();
+				console.log(selection, mode);
 			}
 		}
 	}
@@ -89,7 +90,6 @@ function Cursor()
 
 function drawTile()
 {
-	console.log()
 	for (var md in Map)
 	{
 		console.log(md);
