@@ -57,7 +57,7 @@ function draw() {
 
 function keyPressed()
 {
-	if(key==' ') mnb.tog!=mnb.tog;
+	if(key==' ') mnb.tog=!mnb.tog;
 	if(key=='s'||key=='S')
 	{
 		saveJSON(Map, 'map.json');
