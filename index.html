@@ -11,5 +11,11 @@
 html, body {margin:0; padding:0; overflow:hidden;} </style>
 </head>
 <body>
+<script language="JavaScript">
+function noContextMenu(){
+		document.body.setAttribute('oncontextmenu', function(){return false});
+}
+window.onload = noContextMenu;
+</script>
 </body>
 </html>
