@@ -140,22 +140,7 @@ function keyPressed()
 function menubar()
 {
 	this.tog=false;
-	this.button=this.makeBTN();
-}
-menubar.prototype.makeBTN=function()
-{
-	var res={};
-	var n=0;
-	for(var md in imgBox)
-	{
-		res[md]=[];
-		for(var i in imgBox[md])	
-		{
-			res[md][i]=new BTN(imgBox[md][i],i*30+20,n*30);
-			res[md][i].mouseOn(function(){mode=md, selection=i;})
-		}
-		n++;
-	}
+	this.button=makeBTN();
 }
 menubar.prototype.draw=function()
 {
@@ -171,6 +156,22 @@ menubar.prototype.draw=function()
 				this.button[md][i].draw();
 			}
 		}
+	}
+}
+
+function makeBTN()
+{
+	var res={};
+	var n=0;
+	for(var md in imgBox)
+	{
+		res[md]=[];
+		for(var i in imgBox[md])	
+		{
+			res[md][i]=new BTN(imgBox[md][i],i*30+20,n*30);
+			res[md][i].mouseOn(function(){mode=md, selection=i;})
+		}
+		n++;
 	}
 }
 
