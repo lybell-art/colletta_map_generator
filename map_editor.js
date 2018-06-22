@@ -45,6 +45,7 @@ function draw() {
 	if(mouseIsPressed) mouseFunc();
 	Cursor();
 	drawTile();
+	mnb.draw();
 }
 
 function keyPressed()
@@ -60,7 +61,7 @@ function mousePressed()
 		{
 			for(var i in this.button[md])	
 			{
-				this.button[md][i].draw();
+				this.button[md][i].mouseOn();
 			}
 		}
 	}
@@ -173,6 +174,7 @@ function makeBTN()
 		}
 		n++;
 	}
+	return res;
 }
 
 function BTN(img,x,y,w,h)
