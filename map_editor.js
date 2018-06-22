@@ -178,13 +178,20 @@ function makeBTN()
 		for(var i in imgBox[md])	
 		{
 			res[md][i]=new BTN(imgBox[md][i],i*30+20,n*30+10+height-100);
-			res[md][i].mouseOn=function(){return function(){mode=md, selection=parseInt(i);}}
+			res[md][i].mouseOn=setMouseOnFunc(md,i);
 		}
 		n++;
 	}
 	return res;
 }
 
+function setMouseOnFunc(p, q)
+{
+	function p(){
+		mode=p, selection=parseInt(q);
+	}
+	return p;
+}
 function BTN(img,x,y,w,h)
 {
 	this.img=img;
