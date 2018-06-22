@@ -56,7 +56,6 @@ function Cursor()
 			noTint();
 		}
 	}
-	console.log(mode,selection,mouseX,mouseY);
 }
 
 function drawTile()
