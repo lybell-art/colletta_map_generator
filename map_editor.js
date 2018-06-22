@@ -82,17 +82,17 @@ function Cursor()
 
 function drawTile()
 {
-	for (var mode in Map)
+	for (var md in Map)
 	{
 		for (var i=0; i<wid; i++)
 		{
-			if(Map[mode][i]===undefined) Map[mode][i]=[];
+			if(Map[md][i]===undefined) Map[md][i]=[];
 			for(var j=0;j<hei;j++)
 			{
-				if(Map[mode][i][j]===undefined) Map[mode][i][j]=0;
-				if(Map[mode][i][j]!==0)
+				if(Map[md][i][j]===undefined) Map[md][i][j]=0;
+				if(Map[md][i][j]!==0)
 				{
-					image(imgBox[mode][Map[mode][i][j]-1],i*20,j*20);
+					image(imgBox[md][Map[md][i][j]-1],i*20,j*20);
 				}
 			}
 		}
