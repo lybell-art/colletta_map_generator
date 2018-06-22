@@ -14,19 +14,19 @@ var wid=0, hei=0;
 function preload()
 {
 	var urlData=loadJSON("resource/resource_url.json");
-	for(var i in d.urlData.item)
+	for(var i in urlData.item)
 	{
-		imgBox.items[i]=d.loadImage(d.urlData.items[i],function(){this.count++;}.bind(this));
+		imgBox.items[i]=loadImage(urlData.items[i],function(){this.count++;}.bind(this));
 		imgBox.items[i].resize(20,20);
 	}
 	for(var i in d.urlData.objects)
 	{
-		imgBox.objects[i]=d.loadImage(d.urlData.objects[i],function(){this.count++;}.bind(this));
+		imgBox.objects[i]=loadImage(urlData.objects[i],function(){this.count++;}.bind(this));
 		imgBox.objects[i].resize(20,20);
 	}
 	for(var i in d.urlData.platform)
 	{
-		imgBox.platform[i]=d.loadImage(d.urlData.platform[i],function(){this.count++;}.bind(this));
+		imgBox.platform[i]=loadImage(urlData.platform[i],function(){this.count++;}.bind(this));
 		imgBox.platform[i].resize(20,20);
 	}
 }
