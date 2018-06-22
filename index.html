@@ -2,6 +2,12 @@
 <head>
 <meta charset="UTF-8">
 <title>colletta tinyventure ver.0.01</title>
+<script language="JavaScript">
+function noContextMenu(){
+		document.body.setAttribute('oncontextmenu', function(){return false});
+}
+window.onload = noContextMenu;
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.sound.min.js"></script>
@@ -11,11 +17,5 @@
 html, body {margin:0; padding:0; overflow:hidden;} </style>
 </head>
 <body>
-<script language="JavaScript">
-function noContextMenu(){
-		document.body.setAttribute('oncontextmenu', function(){return false});
-}
-window.onload = noContextMenu;
-</script>
 </body>
 </html>
