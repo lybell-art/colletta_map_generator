@@ -7,7 +7,7 @@ var Map={
 	items:[],
 	objects:[],
 	platform:[]
-}
+};
 var selection=-1, mode="none";
 var wid=0, hei=0;
 
@@ -16,15 +16,15 @@ function preload()
 	var urlData=loadJSON("resource/resource_url.json");
 	for(var i in urlData.item)
 	{
-		imgBox.items.push(loadImage(urlData.items[i],function(){this.count++;}.bind(this)).resize(20,20));
+		imgBox.items.push(loadImage(i).resize(20,20));
 	}
 	for(var i in urlData.objects)
 	{
-		imgBox.objects[i].push(loadImage(urlData.objects[i],function(){this.count++;}.bind(this)).resize(20,20));
+		imgBox.objects[i].push(loadImage(i).resize(20,20));
 	}
 	for(var i in urlData.platform)
 	{
-		imgBox.platform[i].push(loadImage(urlData.platform[i],function(){this.count++;}.bind(this)).resize(20,20));
+		imgBox.platform[i].push(loadImage(i).resize(20,20));
 	}
 }
 
