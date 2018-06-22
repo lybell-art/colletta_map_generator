@@ -22,11 +22,11 @@ function preload()
 			}
 			for(var i in urlData.objects)
 			{
-				imgBox.objects[i].push(loadImage(i).resize(20,20));
+				imgBox.objects.push(loadImage(i).resize(20,20));
 			}
 			for(var i in urlData.platform)
 			{
-				imgBox.platform[i].push(loadImage(i).resize(20,20));
+				imgBox.platform.push(loadImage(i).resize(20,20));
 			}
 		});
 }
