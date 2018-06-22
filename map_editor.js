@@ -202,9 +202,16 @@ function BTN(img,x,y,w,h)
 	if(h===undefined) this.h=img.height;
 	else this.h=h;
 	this.show=true;
-	this.mouseOn=function(){};
+	this.f=function(){};
 }
 BTN.prototype.draw=function()
 {
 	if(this.show) image(this.img,this.x,this.y,this.w,this.h);
+}
+BTN.prototype.mouseOn=function()
+{
+	if(mouseX>this.x&&mouseX<this.x+this.w&&mouseY>this.y&&mouseY<this.y+this.h)
+	{
+		this.f();
+	}
 }
