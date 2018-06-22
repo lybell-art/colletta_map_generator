@@ -18,16 +18,16 @@ function preload()
 		{
 			for(var i in urlData.item)
 			{
-				imgBox.items.push(loadImage(i).resize(20,20));
+				imgBox.items[i]=loadImage(urlData.item[i]).resize(20,20);
 				console.log(i,urlData.item[i]);
 			}
 			for(var i in urlData.objects)
 			{
-				imgBox.objects.push(loadImage(i).resize(20,20));
+				imgBox.objects[i]=loadImage(urlData.objects[i]).resize(20,20);
 			}
 			for(var i in urlData.platform)
 			{
-				imgBox.platform.push(loadImage(i).resize(20,20));
+				imgBox.platform[i]=loadImage(urlData.platform[i]).resize(20,20);
 			}
 		});
 }
