@@ -1,3 +1,9 @@
+function noContextMenu(){
+	document.body.setAttribute('oncontextmenu', function(){return false});
+}
+window.onload = noContextMenu;
+
+
 var imgBox={
 	items:[],
 	objects:[],
@@ -40,6 +46,7 @@ function draw() {
 	else if(key=='2') mode='platform', selection=4;
 	else if(key=='0') mode='none', selection=-1;
 	background(255);
+	if(mouseIsPressed) mouseFunc();
 	Cursor();
 	drawTile();
 }
@@ -51,7 +58,7 @@ function Cursor()
 		if(selection!=-1)
 		{
 			tint(255,120);
-			image(imgBox[mode][selection],mouseX,mouseY);
+			image(imgBox[mode][selection],mouseX-10,mouseY-10);
 			noTint();
 		}
 	}
@@ -76,8 +83,7 @@ function drawTile()
 		}
 	}
 }
-
-function mousePressed()
+function mouseFunc()
 {
 	var x=floor(mouseX/20);
 	var y=floor(mouseY/20);
