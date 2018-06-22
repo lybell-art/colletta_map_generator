@@ -179,7 +179,7 @@ function makeBTN()
 		for(var i in imgBox[md])	
 		{
 			res[md][i]=new BTN(imgBox[md][i],i*30+20,n*30+15+height-100);
-			res[md][i].mouseOn=function(){mode=md, selection=parseInt(i);}
+			res[md][i].mouseOn=function(){return function(){mode=md, selection=parseInt(i);})
 		}
 		n++;
 	}
