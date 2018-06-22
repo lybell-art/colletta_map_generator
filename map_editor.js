@@ -170,7 +170,7 @@ function makeBTN()
 		for(var i in imgBox[md])	
 		{
 			res[md][i]=new BTN(imgBox[md][i],i*30+20,n*30+15+height-100);
-			res[md][i].mouseOn(function(){mode=md, selection=i;})
+			res[md][i].mouseOn=function(){mode=md, selection=i;}
 		}
 		n++;
 	}
@@ -187,15 +187,9 @@ function BTN(img,x,y,w,h)
 	if(h===undefined) this.h=img.height;
 	else this.h=h;
 	this.show=true;
+	this.mouseOn=function(){};
 }
 BTN.prototype.draw=function()
 {
 	if(this.show) image(this.img,this.x,this.y,this.w,this.h);
-}
-BTN.prototype.mouseOn=function(f)
-{
-	if(mouseX>this.x&&mouseX<this.x+this.w&&mouseY>this.y&&mouseY<this.y+this.h)
-	{
-		f();
-	}
 }
