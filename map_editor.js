@@ -69,7 +69,6 @@ function mousePressed()
 			for(var i in mnb.button[md])	
 			{
 				mnb.button[md][i].mouseOn();
-				console.log(selection, mode);
 			}
 		}
 	}
@@ -178,7 +177,7 @@ function makeBTN()
 		for(var i in imgBox[md])	
 		{
 			res[md][i]=new BTN(imgBox[md][i],i*30+20,n*30+10+height-100);
-			res[md][i].mouseOn=setMouseOnFunc(md,i);
+			res[md][i].f=setMouseOnFunc(md,i);
 		}
 		n++;
 	}
