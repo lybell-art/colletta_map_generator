@@ -210,8 +210,11 @@ BTN.prototype.draw=function()
 }
 BTN.prototype.mouseOn=function()
 {
+	console.log(mouseX,mouseY,this.x,this.y,this.w,this.h)
 	if(mouseX>this.x&&mouseX<this.x+this.w&&mouseY>this.y&&mouseY<this.y+this.h)
 	{
 		this.f();
+		return true;
 	}
+	else return false;
 }
