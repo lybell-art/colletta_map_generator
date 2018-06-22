@@ -149,7 +149,9 @@ menubar.prototype.draw=function()
 	{
 		noStroke();
 		fill(220);
-		rect(0,height-this.anim,width,this.anim);
+		rect(0,height-100,width,100);
+		push();
+		translate(0,height-100);
 		for(var md in this.button)
 		{
 			for(var i in this.button[md])	
@@ -157,6 +159,7 @@ menubar.prototype.draw=function()
 				this.button[md][i].draw();
 			}
 		}
+		pop();
 	}
 }
 
