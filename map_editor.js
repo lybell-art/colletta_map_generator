@@ -17,6 +17,8 @@ function preload()
 	for(var i in urlData.item)
 	{
 		imgBox.items.push(loadImage(i).resize(20,20));
+		console.log(i);
+		console.log(loadImage(i).resize(20,20));
 	}
 	for(var i in urlData.objects)
 	{
