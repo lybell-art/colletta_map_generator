@@ -1,9 +1,3 @@
-function noContextMenu(){
-	document.body.setAttribute('oncontextmenu', function(){return false});
-}
-window.onload = noContextMenu;
-
-
 var imgBox={
 	items:[],
 	objects:[],
