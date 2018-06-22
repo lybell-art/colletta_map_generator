@@ -28,7 +28,7 @@ function preload()
 			}
 			for(var i in urlData.platform)
 			{
-				imgBox.platform[i]=loadImage(urlData.platform[i]));
+				imgBox.platform[i]=loadImage(urlData.platform[i]);
 				imgBox.platform[i].resize(20,20);
 			}
 		});
