@@ -3,7 +3,7 @@ var imgBox={
 	objects:[],
 	platform:[]
 };
-var map={
+var Map={
 	items:[],
 	objects:[],
 	platform:[]
@@ -59,17 +59,17 @@ function cursor()
 
 function drawTile()
 {
-	for (var mode in map)
+	for (var mode in Map)
 	{
 		for (var i=0; i<wid; i++)
 		{
-			if(map[mode][i]===undefined) map[mode][i]=[];
+			if(Map[mode][i]===undefined) Map[mode][i]=[];
 			for(var j=0;j<hei;j++)
 			{
-				if(map[mode][i][j]===undefined) map[mode][i][j]=0;
-				if(map[mode][i][j]!==0)
+				if(Map[mode][i][j]===undefined) Map[mode][i][j]=0;
+				if(Map[mode][i][j]!==0)
 				{
-					image(imgBox[mode][map[mode][i][j]-1],i*20,j*20);
+					image(imgBox[mode][Map[mode][i][j]-1],i*20,j*20);
 				}
 			}
 		}
@@ -95,18 +95,18 @@ function mousePressed()
 
 function addTile(x,y)
 {
-	var cur=map[mode];
-	if(cur[x]===undefined) cur[x]=[];
-	cur[x][y]=selection+1;
+	var Cur=Map[mode];
+	if(Cur[x]===undefined) Cur[x]=[];
+	Cur[x][y]=selection+1;
 	if(x>=wid) wid=x+1;
 	if(y>=hei) hei=y+1;
 }
 function delTile(x,y)
 {
-	for (var mode in map)
+	for (var mode in Map)
 	{
-		var cur=map[mode];
-		if(cur[x]===undefined) cur[x]=[];
-		cur[x][y]=0;
+		var Cur=Map[mode];
+		if(Cur[x]===undefined) Cur[x]=[];
+		Cur[x][y]=0;
 	}
 }
