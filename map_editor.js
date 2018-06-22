@@ -40,11 +40,11 @@ function draw() {
 	else if(key=='2') mode='platform', selection=4;
 	else if(key=='0') mode='none', selection=-1;
 	background(255);
-	cursor();
+	Cursor();
 	drawTile();
 }
 
-function cursor()
+function Cursor()
 {
 	if(mode!="none")
 	{
