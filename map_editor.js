@@ -57,11 +57,11 @@ function mousePressed()
 {
 	if(mnb.tog)
 	{
-		for(var md in this.button)
+		for(var md in mnb.button)
 		{
-			for(var i in this.button[md])	
+			for(var i in mnb.button[md])	
 			{
-				this.button[md][i].mouseOn();
+				mnb.button[md][i].mouseOn();
 			}
 		}
 	}
@@ -150,8 +150,6 @@ menubar.prototype.draw=function()
 		noStroke();
 		fill(220);
 		rect(0,height-100,width,100);
-		push();
-		translate(0,height-100);
 		for(var md in this.button)
 		{
 			for(var i in this.button[md])	
@@ -159,7 +157,6 @@ menubar.prototype.draw=function()
 				this.button[md][i].draw();
 			}
 		}
-		pop();
 	}
 }
 
@@ -172,7 +169,7 @@ function makeBTN()
 		res[md]=[];
 		for(var i in imgBox[md])	
 		{
-			res[md][i]=new BTN(imgBox[md][i],i*30+20,n*30);
+			res[md][i]=new BTN(imgBox[md][i],i*30+20,n*30+15+height-100);
 			res[md][i].mouseOn(function(){mode=md, selection=i;})
 		}
 		n++;
