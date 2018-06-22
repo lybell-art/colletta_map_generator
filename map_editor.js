@@ -42,7 +42,14 @@ function draw() {
 	else if(key=='2') mode='platform', selection=4;
 	else if(key=='0') mode='none', selection=-1;
 	background(255);
-	if(mouseIsPressed) mouseFunc();
+	if(mouseIsPressed)
+	{
+		if(mnb.tog)
+		{
+			if(mouseY<height-100) mouseFunc();
+		}
+		else mouseFunc();
+	}
 	Cursor();
 	drawTile();
 	mnb.draw();
@@ -82,8 +89,10 @@ function Cursor()
 
 function drawTile()
 {
+	console.log()
 	for (var md in Map)
 	{
+		console.log(md);
 		for (var i=0; i<wid; i++)
 		{
 			if(Map[md][i]===undefined) Map[md][i]=[];
@@ -170,7 +179,7 @@ function makeBTN()
 		for(var i in imgBox[md])	
 		{
 			res[md][i]=new BTN(imgBox[md][i],i*30+20,n*30+15+height-100);
-			res[md][i].mouseOn=function(){mode=md, selection=i;}
+			res[md][i].mouseOn=function(){mode=md, selection=parseInt(i);}
 		}
 		n++;
 	}
