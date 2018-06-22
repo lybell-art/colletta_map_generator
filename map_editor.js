@@ -59,7 +59,8 @@ function cursor()
 
 function drawTile()
 {
-	for (var mode in map):
+	for (var mode in map)
+	{
 		for (var i=0; i<wid; i++)
 		{
 			if(map[mode][i]===undefined) map[mode][i]=[];
@@ -72,6 +73,7 @@ function drawTile()
 				}
 			}
 		}
+	}
 }
 
 function mousePressed()
@@ -101,8 +103,10 @@ function addTile(x,y)
 }
 function delTile(x,y)
 {
-	for (var mode in map):
+	for (var mode in map)
+	{
 		var cur=map[mode];
 		if(cur[x]===undefined) cur[x]=[];
 		cur[x][y]=0;
+	}
 }
