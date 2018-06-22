@@ -10,6 +10,7 @@ var Map={
 };
 var selection=-1, mode="none";
 var wid=0, hei=0;
+var mnb;
 
 function preload()
 {
@@ -33,6 +34,7 @@ function preload()
 
 function setup() {
 	createCanvas(windowWidth,windowHeight);
+	mnb=new menubar();
 }
 
 function draw() {
@@ -43,6 +45,11 @@ function draw() {
 	if(mouseIsPressed) mouseFunc();
 	Cursor();
 	drawTile();
+}
+
+function keyPressed()
+{
+	if(key==' ') mnb.tog!=mnb.tog;
 }
 
 function mousePressed()
