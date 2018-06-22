@@ -45,6 +45,20 @@ function draw() {
 	drawTile();
 }
 
+function mousePressed()
+{
+	if(mnb.tog)
+	{
+		for(var md in this.button)
+		{
+			for(var i in this.button[md])	
+			{
+				this.button[md][i].draw();
+			}
+		}
+	}
+}
+
 function Cursor()
 {
 	if(mode!="none")
@@ -108,5 +122,70 @@ function delTile(x,y)
 		var Cur=Map[mode];
 		if(Cur[x]===undefined) Cur[x]=[];
 		Cur[x][y]=0;
+	}
+}
+
+function keyPressed()
+{
+	if(key==' ') mnb.tog=!mnb.tog;
+}
+
+function menubar()
+{
+	this.tog=false;
+	this.button=this.makeBTN();
+}
+menubar.prototype.makeBTN=function()
+{
+	var res={};
+	var n=0;
+	for(var md in imgBox)
+	{
+		res[md]=[];
+		for(var i in imgBox[md])	
+		{
+			res[md][i]=new BTN(imgBox[md][i],i*30+20,n*30);
+			res[md][i].mouseOn(function(){mode=md, selection=i;})
+		}
+		n++;
+	}
+}
+menubar.prototype.draw=function()
+{
+	if(this.tog)
+	{
+		noStroke();
+		fill(220);
+		rect(0,height-this.anim,width,this.anim);
+		for(var md in this.button)
+		{
+			for(var i in this.button[md])	
+			{
+				this.button[md][i].draw();
+			}
+		}
+	}
+}
+
+function BTN(img,x,y,w,h)
+{
+	this.img=img;
+	this.x=x;
+	this.y=y;
+	if(w===undefined) this.w=img.width;
+	else this.w=w;
+	if(h===undefined) this.h=img.height;
+	else this.h=h;
+	this.show=true;
+}
+BTN.prototype.draw=function()
+{
+	if(this.show) image(this.img,this.x,this.y,this.w,this.h);
+}
+BTN.prototype.mouseOn=function(f)
+{
+	if(mouseX>x&&mouseX<x+w&&mouseY>y&&mouseY<y+h)
+	{
+		f();
 	}
 }
