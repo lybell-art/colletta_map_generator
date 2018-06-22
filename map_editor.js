@@ -146,11 +146,6 @@ function delTile(x,y)
 	}
 }
 
-function keyPressed()
-{
-	if(key==' ') mnb.tog=!mnb.tog;
-}
-
 function menubar()
 {
 	this.tog=false;
